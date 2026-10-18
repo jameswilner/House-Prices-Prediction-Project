@@ -7795,7 +7795,190 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main>
+<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=808314cc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">kagglehub</span>
+
+<span class="c1"># Only download if we don't already have the data</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">"./data/housing.csv"</span><span class="p">):</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">kagglehub</span><span class="o">.</span><span class="n">dataset_download</span><span class="p">(</span><span class="s2">"yasserh/housing-prices-dataset"</span><span class="p">,</span>
+                                      <span class="n">output_dir</span><span class="o">=</span><span class="s2">"./data"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s2">"./data"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Path to dataset files:"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Path to dataset files: ./data
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=467aae18">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"./data/housing.csv"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>price</th>
+<th>area</th>
+<th>bedrooms</th>
+<th>bathrooms</th>
+<th>stories</th>
+<th>mainroad</th>
+<th>guestroom</th>
+<th>basement</th>
+<th>hotwaterheating</th>
+<th>airconditioning</th>
+<th>parking</th>
+<th>prefarea</th>
+<th>furnishingstatus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>13300000</td>
+<td>7420</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td>2</td>
+<td>yes</td>
+<td>furnished</td>
+</tr>
+<tr>
+<th>1</th>
+<td>12250000</td>
+<td>8960</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td>3</td>
+<td>no</td>
+<td>furnished</td>
+</tr>
+<tr>
+<th>2</th>
+<td>12250000</td>
+<td>9960</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>2</td>
+<td>yes</td>
+<td>semi-furnished</td>
+</tr>
+<tr>
+<th>3</th>
+<td>12215000</td>
+<td>7500</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>3</td>
+<td>yes</td>
+<td>furnished</td>
+</tr>
+<tr>
+<th>4</th>
+<td>11410000</td>
+<td>7420</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>2</td>
+<td>no</td>
+<td>furnished</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eda6a5b1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7811,7 +7994,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Data manipulation</span>
@@ -7890,23 +8073,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">kagglehub</span>
-
-<span class="c1"># Download latest version</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">kagglehub</span><span class="o">.</span><span class="n">dataset_download</span><span class="p">(</span><span class="s2">"yasserh/housing-prices-dataset"</span><span class="p">,</span>
-                                  <span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"./data"</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Path to dataset files:"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"./data/housing.csv"</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display basic info</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Dataset shape:'</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">First 5 rows:'</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -7928,8 +8098,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Path to dataset files: ./data
-Dataset shape: (545, 13)
+<pre>Dataset shape: (545, 13)
 
 First 5 rows:
 </pre>
@@ -8195,7 +8364,7 @@ Summary statistics:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check for missing values</span>
@@ -8277,7 +8446,7 @@ Length: 3, dtype: str
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Distribution of target variable (price)</span>
@@ -8350,7 +8519,7 @@ Length: 3, dtype: str
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Correlation matrix for numerical features</span>
@@ -8414,7 +8583,7 @@ Length: 3, dtype: str
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Price vs key numerical features</span>
@@ -8470,7 +8639,7 @@ Length: 3, dtype: str
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Price vs categorical features</span>
@@ -8574,7 +8743,7 @@ unfurnished      4013831.46
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a copy for preprocessing</span>
@@ -8763,7 +8932,7 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Split features and target</span>
@@ -8950,7 +9119,7 @@ Scaled training data (first 5 rows):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dictionary to store results</span>
@@ -9022,7 +9191,7 @@ Scaled training data (first 5 rows):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Linear Regression</span>
@@ -9055,7 +9224,7 @@ CV R²:      0.6469 (±0.0364)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
@@ -9755,7 +9924,7 @@ a.param-doc-link::before {
   justify-content: center;
   margin-top: 0.5em;
 }
-</style><body><div class="sk-top-container sk-global" id="sk-container-id-6" tabindex="0"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-6" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-6"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.linear_model.LinearRegression.html" rel="noreferrer" target="_blank">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><body><div class="sk-top-container sk-global" id="sk-container-id-1" tabindex="0"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-1" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-1"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.linear_model.LinearRegression.html" rel="noreferrer" target="_blank">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -10075,7 +10244,7 @@ function forceTheme(elementId) {
     }
 }
 
-forceTheme('sk-container-id-6');</script></body>
+forceTheme('sk-container-id-1');</script></body>
 </div>
 </div>
 </div>
@@ -10096,7 +10265,7 @@ forceTheme('sk-container-id-6');</script></body>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 2. Ridge Regression (with hyperparameter tuning)</span>
@@ -10135,7 +10304,7 @@ CV R²:      0.6483 (±0.0349)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
@@ -10835,7 +11004,7 @@ a.param-doc-link::before {
   justify-content: center;
   margin-top: 0.5em;
 }
-</style><body><div class="sk-top-container sk-global" id="sk-container-id-7" tabindex="0"><div class="sk-text-repr-fallback"><pre>Ridge(alpha=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-7" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-7"><div><div>Ridge</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.linear_model.Ridge.html" rel="noreferrer" target="_blank">?<span>Documentation for Ridge</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><body><div class="sk-top-container sk-global" id="sk-container-id-2" tabindex="0"><div class="sk-text-repr-fallback"><pre>Ridge(alpha=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-2" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-2"><div><div>Ridge</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.linear_model.Ridge.html" rel="noreferrer" target="_blank">?<span>Documentation for Ridge</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -11191,7 +11360,7 @@ function forceTheme(elementId) {
     }
 }
 
-forceTheme('sk-container-id-7');</script></body>
+forceTheme('sk-container-id-2');</script></body>
 </div>
 </div>
 </div>
@@ -11212,7 +11381,7 @@ forceTheme('sk-container-id-7');</script></body>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3. Lasso Regression (with hyperparameter tuning)</span>
@@ -11255,19 +11424,6 @@ Test R²:    0.6495
 CV R²:      0.6469 (±0.0364)
 
 Features selected by Lasso (12): ['area', 'bedrooms', 'bathrooms', 'stories', 'mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'parking', 'prefarea', 'furnishingstatus']
-
-==================================================
-Lasso Regression
-==================================================
-Train RMSE: 984,836.44
-Test RMSE:  1,331,078.13
-Train MAE:  718,143.95
-Test MAE:   979,682.97
-Train R²:   0.6854
-Test R²:    0.6495
-CV R²:      0.6469 (±0.0364)
-
-Features selected by Lasso (12): ['area', 'bedrooms', 'bathrooms', 'stories', 'mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'parking', 'prefarea', 'furnishingstatus']
 </pre>
 </div>
 </div>
@@ -11289,7 +11445,7 @@ Features selected by Lasso (12): ['area', 'bedrooms', 'bathrooms', 'stories', 'm
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 4. Decision Tree (with hyperparameter tuning)</span>
@@ -11332,7 +11488,7 @@ CV R²:      0.5416 (±0.0709)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
@@ -12032,7 +12188,7 @@ a.param-doc-link::before {
   justify-content: center;
   margin-top: 0.5em;
 }
-</style><body><div class="sk-top-container sk-global" id="sk-container-id-8" tabindex="0"><div class="sk-text-repr-fallback"><pre>DecisionTreeRegressor(max_depth=5, min_samples_leaf=4, random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-8" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-8"><div><div>DecisionTreeRegressor</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.tree.DecisionTreeRegressor.html" rel="noreferrer" target="_blank">?<span>Documentation for DecisionTreeRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><body><div class="sk-top-container sk-global" id="sk-container-id-3" tabindex="0"><div class="sk-text-repr-fallback"><pre>DecisionTreeRegressor(max_depth=5, min_samples_leaf=4, random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-3" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-3"><div><div>DecisionTreeRegressor</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.tree.DecisionTreeRegressor.html" rel="noreferrer" target="_blank">?<span>Documentation for DecisionTreeRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -12260,7 +12416,7 @@ a.param-doc-link::before {
 </a>
 </td>
 <td class="fitted-att-type">Tree</td>
-<td>&lt;sklearn.tree...002307C5326B0&gt;</td>
+<td>&lt;sklearn.tree...001D3276C1AE0&gt;</td>
 </tr>
 </tbody>
 </table>
@@ -12436,7 +12592,7 @@ function forceTheme(elementId) {
     }
 }
 
-forceTheme('sk-container-id-8');</script></body>
+forceTheme('sk-container-id-3');</script></body>
 </div>
 </div>
 </div>
@@ -12457,7 +12613,7 @@ forceTheme('sk-container-id-8');</script></body>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 5. Random Forest (with hyperparameter tuning)</span>
@@ -12504,7 +12660,7 @@ CV R²:      0.6194 (±0.0411)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
@@ -13204,8 +13360,8 @@ a.param-doc-link::before {
   justify-content: center;
   margin-top: 0.5em;
 }
-</style><body><div class="sk-top-container sk-global" id="sk-container-id-9" tabindex="0"><div class="sk-text-repr-fallback"><pre>RandomForestRegressor(max_depth=10, min_samples_leaf=2, n_jobs=-1,
-                      random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-9" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-9"><div><div>RandomForestRegressor</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.ensemble.RandomForestRegressor.html" rel="noreferrer" target="_blank">?<span>Documentation for RandomForestRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><body><div class="sk-top-container sk-global" id="sk-container-id-4" tabindex="0"><div class="sk-text-repr-fallback"><pre>RandomForestRegressor(max_depth=10, min_samples_leaf=2, n_jobs=-1,
+                      random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-4" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-4"><div><div>RandomForestRegressor</div></div><div><a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.9/modules/generated/sklearn.ensemble.RandomForestRegressor.html" rel="noreferrer" target="_blank">?<span>Documentation for RandomForestRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -13692,7 +13848,7 @@ function forceTheme(elementId) {
     }
 }
 
-forceTheme('sk-container-id-9');</script></body>
+forceTheme('sk-container-id-4');</script></body>
 </div>
 </div>
 </div>
@@ -13713,7 +13869,7 @@ forceTheme('sk-container-id-9');</script></body>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 6. XGBoost (with hyperparameter tuning)</span>
@@ -13760,7 +13916,7 @@ CV R²:      0.6201 (±0.0285)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
@@ -14460,7 +14616,7 @@ a.param-doc-link::before {
   justify-content: center;
   margin-top: 0.5em;
 }
-</style><body><div class="sk-top-container sk-global" id="sk-container-id-10" tabindex="0"><div class="sk-text-repr-fallback"><pre>XGBRegressor(base_score=None, booster=None, callbacks=None,
+</style><body><div class="sk-top-container sk-global" id="sk-container-id-5" tabindex="0"><div class="sk-text-repr-fallback"><pre>XGBRegressor(base_score=None, booster=None, callbacks=None,
              colsample_bylevel=None, colsample_bynode=None,
              colsample_bytree=None, device=None, early_stopping_rounds=None,
              enable_categorical=True, eval_metric=None, feature_types=None,
@@ -14470,7 +14626,7 @@ a.param-doc-link::before {
              max_cat_to_onehot=None, max_delta_step=None, max_depth=5,
              max_leaves=None, min_child_weight=None, missing=nan,
              monotone_constraints=None, multi_strategy=None, n_estimators=300,
-             n_jobs=-1, num_parallel_tree=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-10" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-10"><div><div>XGBRegressor</div></div><div><a class="sk-estimator-doc-link fitted" href="https://xgboost.readthedocs.io/en/release_3.3.0/python/python_api.html#xgboost.XGBRegressor" rel="noreferrer" target="_blank">?<span>Documentation for XGBRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+             n_jobs=-1, num_parallel_tree=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-5" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow" for="sk-estimator-id-5"><div><div>XGBRegressor</div></div><div><a class="sk-estimator-doc-link fitted" href="https://xgboost.readthedocs.io/en/release_3.3.0/python/python_api.html#xgboost.XGBRegressor" rel="noreferrer" target="_blank">?<span>Documentation for XGBRegressor</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
 <div class="estimator-table">
 <details>
 <summary>Parameters</summary>
@@ -15146,7 +15302,7 @@ function forceTheme(elementId) {
     }
 }
 
-forceTheme('sk-container-id-10');</script></body>
+forceTheme('sk-container-id-5');</script></body>
 </div>
 </div>
 </div>
@@ -15167,7 +15323,7 @@ forceTheme('sk-container-id-10');</script></body>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create comparison DataFrame</span>
@@ -15317,7 +15473,7 @@ MODEL COMPARISON SUMMARY
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Visual comparison of models</span>
@@ -15390,7 +15546,7 @@ MODEL COMPARISON SUMMARY
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Feature importance from tree-based models</span>
@@ -15443,7 +15599,7 @@ MODEL COMPARISON SUMMARY
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Linear Regression coefficients</span>
@@ -15461,9 +15617,9 @@ MODEL COMPARISON SUMMARY
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'figures/linear_regression_coefficients.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">'tight'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Top positive drivers of price:'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Largest coefficients (strongest positive effect on price):'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lr_coefficients</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Top negative drivers of price:'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Smallest coefficients (weakest effect on price):'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lr_coefficients</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -15484,7 +15640,7 @@ MODEL COMPARISON SUMMARY
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-Top positive drivers of price:
+Largest coefficients (strongest positive effect on price):
 bathrooms         523153.38
 area              519288.13
 airconditioning   362446.19
@@ -15492,7 +15648,7 @@ stories           348177.11
 prefarea          266661.05
 dtype: float64
 
-Top negative drivers of price:
+Smallest coefficients (weakest effect on price):
 bedrooms            58690.92
 guestroom           89357.65
 mainroad           128115.93
@@ -15520,10 +15676,10 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the best model based on test R\u00b2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the best model based on test R²</span>
 <span class="n">best_model_name</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">results</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="s1">'test_r2'</span><span class="p">])</span>
 <span class="n">best_model</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">best_model_name</span><span class="p">][</span><span class="s1">'model'</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Best model: </span><span class="si">{</span><span class="n">best_model_name</span><span class="si">}</span><span class="s1"> (Test R</span><span class="se">\u00b2</span><span class="s1"> = </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="n">best_model_name</span><span class="p">][</span><span class="s2">"test_r2"</span><span class="p">]</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
@@ -15607,7 +15763,7 @@ dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Final summary</span>
@@ -15615,7 +15771,7 @@ dtype: float64
 <span class="nb">print</span><span class="p">(</span><span class="s1">'SUMMARY'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'='</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
 
-<span class="c1"># Sort models by test R\u00b2</span>
+<span class="c1"># Sort models by test R²</span>
 <span class="n">sorted_models</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">'test_r2'</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Model Ranking (by Test R</span><span class="se">\u00b2</span><span class="s1">):'</span><span class="p">)</span>
@@ -15639,9 +15795,14 @@ dtype: float64
 <span class="nb">print</span><span class="p">(</span><span class="s1">'   - Air conditioning'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'   - Number of stories'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'   - Preferred area (prefarea)'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'2. Tree-based models (Random Forest, XGBoost) tend to perform better'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'   than linear models due to capturing non-linear relationships.'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'3. Regularization (Ridge/Lasso) helps prevent overfitting in linear models.'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'2. Linear models performed best on the held-out test set. Random Forest and'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'   XGBoost fit the training data much more closely (train R</span><span class="se">\u00b2</span><span class="s1"> around 0.88-0.89)'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'   but generalised worse, which suggests overfitting on a small dataset'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'   (545 rows).'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'3. Ridge and Lasso gave almost no improvement over plain linear regression,'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'   so regularisation added little here.'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'4. Note: the best model was selected using test-set R</span><span class="se">\u00b2</span><span class="s1">. Selecting on'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'   cross-validation score would avoid slight optimistic bias.'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -15681,9 +15842,14 @@ Key Insights:
    - Air conditioning
    - Number of stories
    - Preferred area (prefarea)
-2. Tree-based models (Random Forest, XGBoost) tend to perform better
-   than linear models due to capturing non-linear relationships.
-3. Regularization (Ridge/Lasso) helps prevent overfitting in linear models.
+2. Linear models performed best on the held-out test set. Random Forest and
+   XGBoost fit the training data much more closely (train R² around 0.88-0.89)
+   but generalised worse, which suggests overfitting on a small dataset
+   (545 rows).
+3. Ridge and Lasso gave almost no improvement over plain linear regression,
+   so regularisation added little here.
+4. Note: the best model was selected using test-set R². Selecting on
+   cross-validation score would avoid slight optimistic bias.
 </pre>
 </div>
 </div>
